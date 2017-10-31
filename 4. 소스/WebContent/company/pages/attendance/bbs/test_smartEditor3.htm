@@ -1,0 +1,340 @@
+
+
+
+
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	
+		
+		
+			<link href="https://ssl.pstatic.net/static.editor/static/dist/editor/1505365959390/css/blog_desktop_normal_editor.min.css" rel="stylesheet" type="text/css" />
+			<link href="https://ssl.pstatic.net/static.editor/static/dist/editor/1505365959390/photoeditor-res/css/photo_editor.css" rel="stylesheet" type="text/css" />
+		
+	
+
+	<link rel="icon" href="http://section.blog.naver.com/favicon.ico" type="image/x-icon">
+	<title>SmartEditor - editor</title>
+</head>
+
+<body>
+<!-- <script type="text/javascript" src="/static/js/src/se.js?89931829d2d49bd03c2a5f195896597a709ec52d"></script> -->
+
+<div class="editor-wrap">
+	<div class="publish_progress_bar" id="se_progressbar"></div>
+	<div class="editor-header" id="se_top_menu_area">
+		<a href="#se_side_bar" title="네비게이션" class="access_hot_key"><span>문서작성 메뉴 바로가기</span></a>
+		<a href="#se_canvas_frame" title="네비게이션" class="access_hot_key"><span>본문 및 미리보기영역 바로가기</span></a>
+		<div class="header-default dim">
+			<h1>
+				<a href="http://www.naver.com" target="_blnak" class="logo_naver" onclick="clickcr(this, 'STA.naver', '', '', event);"><span class="blind">네이버 메인</span></a>
+				<a href="http://blog.naver.com" target="_blnak" class="logo_service blog" onclick="clickcr(this, 'STA.blog', '', '', event);"><span class="blind">블로그 서비스</span></a>
+			</h1>
+			<div class="se2_link_wrap" style="display:none">
+				<a class="se2_link" href="#" style="display:none" id="_se_se2" onclick="clickcr(this,'STA.se2', '', '', event); return false;">이전 버전으로 쓰기</a>
+				<a class="se_set_default" style="display:none" id="_se_default_eidtor_setting" href="#" onclick="clickcr(this, 'STA.editorset', '', '', event); return false;"><span class="blind">기본에디터설정</span></a>
+			</div>
+			<div class="device_group" id="se_preview_ctrl">
+				<a href="#" title="" class="device_mobile __preview_type" data-previewtype="mobile" onclick="clickcr(this, 'tpb.mview', '', '', event);"><span class="blind">미리보기 영역 모바일 너비로 바꾸기</span></a>
+				<a href="#" title="" class="device_tablet __preview_type" data-previewtype="tablet" onclick="clickcr(this, 'tpb.tview', '', '', event);"><span class="blind">미리보기 영역 태블릿 너비로 바꾸기</span></a>
+				<a href="#" title="" class="device_desktop __preview_type" data-previewtype="desktop" onclick="clickcr(this, 'tpb.pview', '', '', event);"><span class="blind">미리보기 영역 PC 너비로 바꾸기</span></a>
+			</div>
+			<div class="header-nav">
+				<ul class="nav_group">
+					<li class="lst_btn_setting">
+					<div class="btn_temp_wrap"  >
+						<a href="#" class="btn_temp_save" id="se_top_savedoc_temp_save_btn" onclick="clickcr(this, 'tpb.save', '', '', event);"><span>저장</span></a>
+						<a href="#" class="btn_temp_state" id="se_top_savedoc_temp_count_btn" onclick="clickcr(this, 'tpb.spost', '', '', event);"><span id="se_top_savedoc_temp_count_view">1</span></a>
+					</div>
+					<div id="se_top_savelist_layer"></div>
+					</li>
+
+					<li class="lst_btn_setting">
+						<a href="#" id="se_top_publish_btn" class="btn_type_active" onclick="clickcr(this, 'tpb.publish', '', '', event);"><span>발행</span></a>
+						<div id="se_top_publish_layer"></div>
+					</li>
+					<li class="lst_btn_setting">
+						<a href="#" onclick="return false;" title="도움말" id="se_guide_btn" class="btn_tip" onclick="clickcr(this, 'tpb.guide', '', '', event);"><span class="blind">퀵 가이드 띄우기</span></a>
+					</li>
+					<li class="lst_btn_setting">
+						<a title="" href="#" id="se_top_setting_btn" class="btn_gnb_more" onclick="clickcr(this, 'tpb.more', '', '', event); return false;"><span class="blind">더보기</span></a>
+						<div class="pop_simple pop_gnb_more" id="se_top_setting_contents">
+						</div>
+					</li>
+				</ul>
+			</div>
+			<h2>
+				<!-- [D] 자동저장 텍스트 저장중.../저장됨 -->
+				<span class="lbl_autoSaving" style="display:none">저장중...</span>
+			</h2>
+		</div>
+		<div id="se_doctoolbar" class="header-docProperty">
+			<div class="wrap_btn_wholeSetting __document_toolbar">
+				<div class="se_wholeAlign __se_doc_align">
+					<a href="#" role="button" class="btn_alignLeft __se_align_btn" onclick="clickcr(this, 'dct.left', '', '', event);" data-align="left" title="왼쪽 정렬"><span class="blind">왼쪽 정렬</span></a>
+					<a href="#" role="button" class="btn_alignCenter __se_align_btn" onclick="clickcr(this, 'dct.center', '', '', event);" data-align="center" title="가운데 정렬"><span class="blind">가운데 정렬</span></a>
+					<a href="#" role="button" class="btn_alignRight __se_align_btn" onclick="clickcr(this, 'dct.right', '', '', event);" data-align="right" title="오른쪽 정렬"><span class="blind">오른쪽 정렬</span></a>
+					<a href="#" role="button" class="btn_alignJustify __se_align_btn" onclick="clickcr(this, 'dct.justify', '', '', event);" data-align="justify" title="양끝 정렬"><span class="blind">양끝 정렬</span></a>
+				</div>
+				<a role="button" href="#" class="btn_speller" id="se_top_speller_btn" onclick="clickcr(this, 'dct.spellcheck', '', '', event);"><span>맞춤법 검사</span></a>
+			</div>
+
+			<div class="wrap_btn_load">
+				<a href="#" id="se_top_template_btn" class="btn_load" onclick="clickcr(this, 'tpb.template', '', '', event);"><span>템플릿</span></a>
+				<div id="se_top_templatelist_layer">
+				</div>
+			</div>
+		</div>
+
+
+		<!-- 맞춤법검사 상단영역 -->
+		<div class="speller_header" id="se_top_speller">
+			<div class="speller_title" id="se_speller_msg">
+				맞춤법에 어긋난 단어가 <span class="speller_cnt">15개</span> 있습니다.
+			</div>
+			<ul class="speller_nav_group">
+				<li class="lst_btn_setting">
+					<a role="button" href="#" class="btn_speller_re" id="se_speller_retry_btn" onclick="clickcr(this, 'spc.recheck', '', '', event);"><span>맞춤법 재검사</span></a>
+				</li>
+				<li class="lst_btn_setting">
+					<a role="button" href="#" class="btn_speller_end" id="se_speller_stop_btn" onclick="clickcr(this, 'spc.end', '', '', event);"><span>검사 종료</span></a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="editor-noticeWrap" id="se_top_contents_box">
+	</div>
+
+	<div class="editor-container" style="z-index:80;">
+		<div class="editor-side side-left" id="se_side_bar">
+            <!--[D]
+            documentTitle 컴포넌트가 is-noimg인경우 leftPane-toggle 에 type2 클래스를 추가해주세요.
+            열기 / 닫기 텍스트는 토글될 때 함께 변경해주세요.
+            -->
+            <a href="#" class="leftPane-toggle" id="se_side_toggle_btn"><span class="blind">문서작성 메뉴 열기 / 닫기</span></a>
+			<div class="editor-side-innerWrap">
+				<div class="se_tabContent se_componentTab" id="se_side_comp_panel">
+					<a href="#" class="se_tabTitle __se_side_panel_toggle_btn"><div><h2>글쓰기 도구</h2></div></a>
+					<div class="__se_side_panel_cont se_tabContentsWraper" style="display:none;">
+					<ul class="se_tabGroup se_component_group" id="se_side_comp_list">
+					</ul>
+					</div>
+				</div>
+				<div class="se_tabContent se_libraryTab is-empty" id="se_side_lib_panel">
+					<a href="#" class="se_tabTitle __se_side_panel_toggle_btn"><div><h2>라이브러리</h2></div></a>
+					<div class="__se_side_panel_cont se_tabContentsWraper"  style="display:none;">
+					<ul class="se_tabGroup se_lib_group" id="se_side_lib_list">
+					</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+        <div class="editor-content">
+			<div id="se_frame_layer" style="text-align:center;">
+				<!-- <div class="drawer drawer_userGuide" id="se_bottom_contents_box">
+					<a href="#" class="btn_close_pop __se_box_close" title="팝업 닫기"></a>
+					<div class="drawer_cont __se_box_contents">
+
+					</div>
+				</div> -->
+			</div>
+
+			<div class="pop_layer_wrap pop_loading" id="se_inner_lodding">
+			<div class="dim"></div>
+			<div class="pop_gnbDefault">
+				<div class="pop_info_text">
+					<span class="__se_loading_text"></span>
+				</div>
+				<div class="se_progress_bar is-progress"></div>
+			</div>
+		</div>
+			<!-- <button type="button" id="se_guide_btn" class="btn_open_userGuide is-on">가이드</button>
+			 -->
+	</div>
+		<div class="pop_layer_wrap pop_loading " id="se_outter_lodding">
+			<div class="dim"></div>
+			<div class="pop_gnbDefault">
+				<div class="pop_info_text">
+					<span class="__se_loading_text">글을 불러오고 있습니다...</span>
+				</div>
+				<div class="se_progress_bar is-progress"></div>
+			</div>
+		</div>
+		<!-- [D] 배경이미지 위치 이동 시 다른 영역 가려주는 blocker div -->
+		<!-- [D] body 의 is-movingBg 클래스를 상속 받아서 css로 display 속성 제어 함 -->
+		<div class="se_movingBg_dim"></div>
+		<!-- 사진검색 레이어-->
+		<div class="drawer_searchImage __se_searchImageLayer"></div>
+		<!-- 사진검색 우측 하단 버튼 -->
+		<button type="button" class="btn_open_searchImage __se_open_searchImageLayer_subBtn"><span class="txt">사진검색</span></button>
+	</div>
+	<!--[D] 중앙정렬 레이어팝업 공통 레이아웃 -->
+	<div class="pop_layer_wrap pop_spellerLoading_wrap">
+		<div class="align_wrap">
+			<div class="align_inner_wrap">
+				<div class="dim"></div>
+				<div class="in_layer">
+					<!--[D] 컨텐츠가 들어갈 영역 : 개발에서 필요한 구조 추가 -->
+					<div class="__se_pop_content pop_content">
+						<!--[D] 팝업 레이어 타이틀-->
+						<div class="pop_spellerLoading">
+							<strong>맞춤법 검사 중입니다</strong>
+							<img alt="">
+						</div>
+					</div>
+					<!--[D] 확인, 취소 버튼이 필요하면 들어갈 영역 : 개발에서 필요한 구조 추가 -->
+					<div class="__se_pop_buttons pop_btn">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+    
+    
+        <!-- <script type="text/javascript" src="http://blog.editor.naver.com/static/js/dist/se_editor_init.min.js?dummy=89931829d2d49bd03c2a5f195896597a709ec52d"></script> -->
+        <script type="text/javascript" src="http://blog.editor.naver.com/static/js/dist/blog_desktop_normal_res.min.js?dummy=89931829d2d49bd03c2a5f195896597a709ec52d"></script>
+     
+
+<script type="text/javascript">
+(function(){
+        var htInitConfig = {};
+        htInitConfig.ENV_SETTING = {};
+        htInitConfig.ENV_SETTING.DOC_TYPE = "normal";
+        htInitConfig.ENV_SETTING.DEVICE_TYPE = "desktop";
+        htInitConfig.ENV_SETTING.EDITOR_TYPE = "";
+        htInitConfig.ENV_SETTING.IS_FACEBOOK_LINKED = false;
+        htInitConfig.ENV_SETTING.IS_TWITTER_LINKED = false;
+        htInitConfig.ENV_SETTING.IS_AGREE_MAP_INFO = "true";
+        htInitConfig.ENV_SETTING.AUTO_SAVE_USE = ("true" === "true") ? true : false;
+
+        htInitConfig.ENV_SETTING.I18N_LOCALE = "ko";
+        htInitConfig.ENV_SETTING.EDITOR_DOMAIN = "http://editor.naver.com";
+        
+        htInitConfig.ENV_SETTING.PHOTO_UPLOADER_DOMAIN  = "blog.upphoto.naver.com";
+        htInitConfig.ENV_SETTING.IMAGE_DOMAIN = "http://blogfiles.naver.net";
+        htInitConfig.ENV_SETTING.THUMBNAIL_DOMAIN = "http://blogthumb4.naver.net";
+        htInitConfig.ENV_SETTING.THUMBNAIL_TYPE = "w1";
+        htInitConfig.ENV_SETTING.GIF_THUMBNAIL_TYPE = "";
+        htInitConfig.ENV_SETTING.VR_THUMBNAIL_TYPE = "preview966_544";
+        htInitConfig.ENV_SETTING.NDRIVE_DOMAIN = "http://ndrive.naver.com";
+        htInitConfig.ENV_SETTING.SE2_PAGE = "http://blog.naver.com/{targetUserId}?Redirect=Write&useSmartEditorVersion=2";
+        htInitConfig.ENV_SETTING.EVENT_TEMPLATE_USE = false;
+        htInitConfig.ENV_SETTING.OPEN_TEMPLATE_TYPE = "";
+
+        htInitConfig.ENV_SETTING.NAVER_ID = "hanjukim_97";
+        htInitConfig.ENV_SETTING.IE_COMPATIBLE_MODE = false;
+
+        htInitConfig.ENV_SETTING.SERVICE_HOME = "http://blog.naver.com";
+        htInitConfig.ENV_SETTING.SERVICE_NAME = "blog";
+        htInitConfig.ENV_SETTING.LOAD_MODE = ("real" === "local") ? "dev" : "dist";
+        htInitConfig.ENV_SETTING.BUILD_PROPERTY = "real";
+        htInitConfig.ENV_SETTING.PUBLISH_RETURN_URL;
+        htInitConfig.ENV_SETTING.TOTAL_TEMPDOC_COUNT = "1";
+        htInitConfig.ENV_SETTING.TOTAL_USER_TEMPLATE_COUNT = ("0" !== "") ? Number("0") : 0;
+        htInitConfig.ENV_SETTING.EMPTY_DOCUENT = true;
+        //http://bts1.navercorp.com/nhnbts/browse/SMRTEDITOR-10865 //맞춤법서버 전환작업 -> 주키퍼설정값을 webConfigJson에 바인딩
+        htInitConfig.ENV_SETTING.WEB_CONFIG = JSON.parse('{"newSpeller" : true}');    // ' ' 홀따옴표에 주의하세요.
+
+        htInitConfig.USER_INFO = {
+            userLink : "",
+            id : "hanjukim_97",
+            nickName : "",
+            thumbNail : ""
+        };
+
+        
+        htInitConfig.USER_INFO.defaultMeta = {"options":{"openType":2,"commentYn":true,"sympathyYn":false,"scrapType":2,"searchYn":true,"rssOpenYn":true,"relayOpenYn":true,"outSideAllowYn":true,"twiterPostingYn":false,"facebookPostingYn":false,"greenReviewBannerYn":false,"exifEnabled":false,"defaultEditorVersion":2,"cclYn":false,"editorSource":"pv7YMrc5aBWxOo5xVBub7Q=="},"postCount":46,"success":true};
+        
+        
+        var blogCategoryList = {"categoryList":[{"categoryNo":1,"categoryName":"게시판","parentCategoryNo":-1,"directorySeq":0,"isOpen":true,"logType":"mylog","postCount":46,"hasNew":false,"isChallengeCategory":false}],"success":false};
+        htInitConfig.USER_INFO.categoryList = blogCategoryList.categoryList;
+        
+        
+        
+        htInitConfig.USER_INFO.directoryList = {"directoryGroupList":[{"directoryList":[{"sortNo":1,"seq":5,"name":"문학·책"},{"sortNo":2,"seq":6,"name":"영화"},{"sortNo":3,"seq":8,"name":"미술·디자인"},{"sortNo":4,"seq":7,"name":"공연·전시"},{"sortNo":5,"seq":11,"name":"음악"},{"sortNo":6,"seq":9,"name":"드라마"},{"sortNo":7,"seq":12,"name":"스타·연예인"},{"sortNo":8,"seq":13,"name":"만화·애니"},{"sortNo":9,"seq":10,"name":"방송"}],"seq":1,"name":"엔터테인먼트·예술"},{"directoryList":[{"sortNo":1,"seq":14,"name":"일상·생각"},{"sortNo":2,"seq":15,"name":"육아·결혼"},{"sortNo":3,"seq":16,"name":"애완·반려동물"},{"sortNo":4,"seq":17,"name":"좋은글·이미지"},{"sortNo":5,"seq":18,"name":"패션·미용"},{"sortNo":6,"seq":19,"name":"인테리어·DIY"},{"sortNo":7,"seq":20,"name":"요리·레시피"},{"sortNo":8,"seq":21,"name":"상품리뷰"},{"sortNo":9,"seq":36,"name":"원예·재배"}],"seq":2,"name":"생활·노하우·쇼핑"},{"directoryList":[{"sortNo":1,"seq":22,"name":"게임"},{"sortNo":2,"seq":23,"name":"스포츠"},{"sortNo":3,"seq":24,"name":"사진"},{"sortNo":4,"seq":25,"name":"자동차"},{"sortNo":5,"seq":26,"name":"취미"},{"sortNo":6,"seq":27,"name":"국내여행"},{"sortNo":7,"seq":28,"name":"세계여행"},{"sortNo":8,"seq":29,"name":"맛집"}],"seq":3,"name":"취미·여가·여행"},{"directoryList":[{"sortNo":1,"seq":30,"name":"IT·컴퓨터"},{"sortNo":2,"seq":31,"name":"사회·정치"},{"sortNo":3,"seq":32,"name":"건강·의학"},{"sortNo":4,"seq":33,"name":"비즈니스·경제"},{"sortNo":5,"seq":35,"name":"어학·외국어"},{"sortNo":6,"seq":34,"name":"교육·학문"}],"seq":4,"name":"지식·동향"}]};
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        htInitConfig.USER_INFO.TALKTALK_PROFILES = [];
+        
+
+        htInitConfig.SERVICE_CONFIG = {};
+        
+        
+        //[SMRTEDITOR-3332] 관련처리. 예약글 발행기능 추가시 제거.
+        if(htInitConfig.USER_INFO.TARGET_USER_ID){
+            htInitConfig.SERVICE_CONFIG.USE_RESERVATION_MENU = false;
+        }
+        htInitConfig.SERVICE_CONFIG.VIEW_COLUMN_COUNT = ("1" !== "") ? Number("1") : 0;
+        htInitConfig.SERVICE_CONFIG.VIEW_WIDTH = ("886" !== "") ? Number("886") : 0;
+        htInitConfig.SERVICE_CONFIG.USE_MRBLOG = false;
+        htInitConfig.SERVICE_CONFIG.MRBLOG_DATA = {};
+        htInitConfig.SERVICE_CONFIG.CONTENTS_STANDARD_WIDTH = "886";
+
+        /*htInitConfig.SERVICE_CONFIG.USE_MRBLOG = true;
+         htInitConfig.SERVICE_CONFIG.MRBLOG_DATA = {"talkCode": "111",
+         "title" : "샘플테스트",
+         "contents" : "내가 생각하는 잘 쓴 글은 어떤 글? \r\n\r\n<a href=\"http://blogpeople.blog.me/220500418917\" style=\"text-decoration:underline;color:#0064FF\">(조선 최고 시인도 뽑아보시죠)</a>"};*/
+
+        htInitConfig.SERVICE_CONFIG.CHECK_SERVER = {"serviceEnabled":true,"reserveMaintenance":false,"maintenanceType":0,"maintenanceStartDate":"2016-01-27T16:00:00.000+0000","maintenanceEndDate":"2016-01-27T23:20:00.000+0000","maintenanceLink":"https:\u002F\u002Fhelp.naver.com\u002Fsupport\u002Falias\u002Fblog\u002Fetc\u002Fetc1.naver","isReadOnly":false,"success":true};
+        htInitConfig.SERVICE_CONFIG.CHALLENGE = "";
+	    htInitConfig.SERVICE_CONFIG.IS_ON_MODIFICATION = (htInitConfig.ENV_SETTING.EMPTY_DOCUENT !== true);
+        
+
+        
+
+        htInitConfig.SERVICE_CONFIG.NOTICE_MESSAGE = "";
+
+        
+
+        
+        $SE_CONFIG.setProperty("DOC_DATA",{});
+
+    window.onload = function(){
+        
+        // 로그 기록 셋팅
+        $SE_LOGGER.initialize({
+            serviceId: "blog",
+            docType: "normal",
+            deviceType: "desktop",
+            buildProfile: "real",
+            userId: htInitConfig.USER_INFO.id,
+            nickName: htInitConfig.USER_INFO.nickName
+        });
+
+        
+
+        
+            
+            
+            $SEEditorLauncher.launch(htInitConfig);
+            
+        
+    };
+})();
+</script>
+
+</body>
+</html>
+
+

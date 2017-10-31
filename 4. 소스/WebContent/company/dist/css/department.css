@@ -1,0 +1,42 @@
+textarea { resize: none; }
+
+#btns {
+	display: inline-block;
+	text-align: right;
+	margin-top: 20px;
+}
+
+#btn-custom-small { 
+	height: 20px; 
+	padding: 0px; 
+}
+.btn-confirm { margin-bottom: 20px; }
+
+.collapsable {
+	cursor: pointer;
+}
+
+.table-list th, td { 
+	text-align: center;
+	text-size: 1.2em;
+}
+.table-write tr > th { text-align: center; }
+.table-read tr > th { 
+	text-align: center; 
+	width: 20%; 
+}
+.table-read th {
+	width: 15%;
+	text-align: center;
+}
+.table-read td {
+	text-align: left;
+}
+.input-search { 
+	background-image: url('/Project/company/images/searchicon.png'); 
+	background-position: 10px 10px; 
+	background-repeat: no-repeat;
+	padding: 12px 20px 12px 40px;
+	font-size: 1.2em;
+	height: 40px;
+}

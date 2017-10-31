@@ -1,0 +1,983 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	version="3.1">
+	<display-name>Project</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+
+	<!-- 로그인, 메인 -->
+   <servlet>
+      <servlet-name>main.login</servlet-name>
+      <servlet-class>com.fineapple.Login</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>main.login</servlet-name>
+      <url-pattern>/login.do</url-pattern>
+   </servlet-mapping>
+   
+   <servlet>
+      <servlet-name>main.home</servlet-name>
+      <servlet-class>com.fineapple.Index</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>main.home</servlet-name>
+      <url-pattern>/home.do</url-pattern>
+   </servlet-mapping>   
+   
+   
+   
+
+<!-- Department -->
+	<servlet>
+		<servlet-name>department.temp_start</servlet-name>
+		<servlet-class>com.fineapple.department.temp.TempStart</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>department.temp_start</servlet-name>
+		<url-pattern>/company/pages/department/tempstart.do</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>department.project.frontpage</servlet-name>
+		<servlet-class>com.fineapple.department.project.FrontPage</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>department.project.frontpage</servlet-name>
+		<url-pattern>/company/pages/department/frontpage.do</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Project -->
+	<servlet>
+			<servlet-name>department.project.check</servlet-name>
+			<servlet-class>com.fineapple.department.project.ProjectCheck</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>department.project.check</servlet-name>
+		<url-pattern>/company/pages/department/project_c.do</url-pattern>
+	</servlet-mapping>
+	<servlet>
+			<servlet-name>department.project.write</servlet-name>
+			<servlet-class>com.fineapple.department.project.ProjectWrite</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>department.project.write</servlet-name>
+		<url-pattern>/company/pages/department/write_p.do</url-pattern>
+	</servlet-mapping>
+	<servlet>
+			<servlet-name>department.project.writego</servlet-name>
+			<servlet-class>com.fineapple.department.project.ProjectWriteGo</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>department.project.writego</servlet-name>
+		<url-pattern>/company/pages/department/write_p_go.do</url-pattern>
+	</servlet-mapping>
+	<servlet>
+			<servlet-name>department.project.read</servlet-name>
+			<servlet-class>com.fineapple.department.project.ProjectRead</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>department.project.read</servlet-name>
+		<url-pattern>/company/pages/department/read_p.do</url-pattern>
+	</servlet-mapping>
+	<!-- Accounting -->
+	<servlet>
+			<servlet-name>department.accounting.check</servlet-name>
+			<servlet-class>com.fineapple.department.accounting.AccountingCheck</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>department.accounting.check</servlet-name>
+		<url-pattern>/company/pages/department/accounting_c.do</url-pattern>
+	</servlet-mapping>
+	<servlet>
+			<servlet-name>department.accounting.read</servlet-name>
+			<servlet-class>com.fineapple.department.accounting.AccountingRead</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>department.accounting.read</servlet-name>
+		<url-pattern>/company/pages/department/read_a.do</url-pattern>
+	</servlet-mapping>
+	<servlet>
+			<servlet-name>department.accounting.readgo</servlet-name>
+			<servlet-class>com.fineapple.department.accounting.AccountingReadGo</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>department.accounting.readgo</servlet-name>
+		<url-pattern>/company/pages/department/read_a_go.do</url-pattern>
+	</servlet-mapping>
+	<!-- Income -->
+	<servlet>
+			<servlet-name>department.income.check</servlet-name>
+			<servlet-class>com.fineapple.department.income.IncomeCheck</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>department.income.check</servlet-name>
+		<url-pattern>/company/pages/department/income_c.do</url-pattern>
+	</servlet-mapping>
+	<servlet>
+			<servlet-name>department.income.write</servlet-name>
+			<servlet-class>com.fineapple.department.income.IncomeWrite</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>department.income.write</servlet-name>
+		<url-pattern>/company/pages/department/write_i.do</url-pattern>
+	</servlet-mapping>
+	<servlet>
+			<servlet-name>department.income.writego</servlet-name>
+			<servlet-class>com.fineapple.department.income.IncomeWriteGo</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>department.income.writego</servlet-name>
+		<url-pattern>/company/pages/department/write_i_go.do</url-pattern>
+	</servlet-mapping>
+	<servlet>
+			<servlet-name>department.income.read</servlet-name>
+			<servlet-class>com.fineapple.department.income.IncomeRead</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>department.income.read</servlet-name>
+		<url-pattern>/company/pages/department/read_i.do</url-pattern>
+	</servlet-mapping>
+	<servlet>
+			<servlet-name>department.income.readconfirm</servlet-name>
+			<servlet-class>com.fineapple.department.income.IncomeReadConfirm</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>department.income.readconfirm</servlet-name>
+		<url-pattern>/company/pages/department/read_i_c.do</url-pattern>
+	</servlet-mapping>
+	<servlet>
+			<servlet-name>department.income.edit</servlet-name>
+			<servlet-class>com.fineapple.department.income.IncomeEdit</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>department.income.edit</servlet-name>
+		<url-pattern>/company/pages/department/edit_i.do</url-pattern>
+	</servlet-mapping>
+	<servlet>
+			<servlet-name>department.income.editgo</servlet-name>
+			<servlet-class>com.fineapple.department.income.IncomeEditGo</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>department.income.editgo</servlet-name>
+		<url-pattern>/company/pages/department/edit_i_go.do</url-pattern>
+	</servlet-mapping>
+	<servlet>
+			<servlet-name>department.income.del</servlet-name>
+			<servlet-class>com.fineapple.department.income.IncomeDel</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>department.income.del</servlet-name>
+		<url-pattern>/company/pages/department/del_i.do</url-pattern>
+	</servlet-mapping>
+	<!-- Outcome -->
+	<servlet>
+			<servlet-name>department.outcome.check</servlet-name>
+			<servlet-class>com.fineapple.department.outcome.OutcomeCheck</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>department.outcome.check</servlet-name>
+		<url-pattern>/company/pages/department/outcome_c.do</url-pattern>
+	</servlet-mapping>
+	<servlet>
+			<servlet-name>department.outcome.write</servlet-name>
+			<servlet-class>com.fineapple.department.outcome.OutcomeWrite</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>department.outcome.write</servlet-name>
+		<url-pattern>/company/pages/department/write_o.do</url-pattern>
+	</servlet-mapping>
+	<servlet>
+			<servlet-name>department.outcome.writego</servlet-name>
+			<servlet-class>com.fineapple.department.outcome.OutcomeWriteGo</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>department.outcome.writego</servlet-name>
+		<url-pattern>/company/pages/department/write_o_go.do</url-pattern>
+	</servlet-mapping>
+	<servlet>
+			<servlet-name>department.outcome.read</servlet-name>
+			<servlet-class>com.fineapple.department.outcome.OutcomeRead</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>department.outcome.read</servlet-name>
+		<url-pattern>/company/pages/department/read_o.do</url-pattern>
+	</servlet-mapping>
+	<servlet>
+			<servlet-name>department.outcome.readconfirm</servlet-name>
+			<servlet-class>com.fineapple.department.outcome.OutcomeReadConfirm</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>department.outcome.readconfirm</servlet-name>
+		<url-pattern>/company/pages/department/read_c.do</url-pattern>
+	</servlet-mapping>
+	<servlet>
+			<servlet-name>department.outcome.edit</servlet-name>
+			<servlet-class>com.fineapple.department.outcome.OutcomeEdit</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>department.outcome.edit</servlet-name>
+		<url-pattern>/company/pages/department/edit_o.do</url-pattern>
+	</servlet-mapping>
+	<servlet>
+			<servlet-name>department.outcome.editgo</servlet-name>
+			<servlet-class>com.fineapple.department.outcome.OutcomeEditGo</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>department.outcome.editgo</servlet-name>
+		<url-pattern>/company/pages/department/edit_o_go.do</url-pattern>
+	</servlet-mapping>
+	<servlet>
+			<servlet-name>department.outcome.del</servlet-name>
+			<servlet-class>com.fineapple.department.outcome.OutcomeDel</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>department.outcome.del</servlet-name>
+		<url-pattern>/company/pages/department/del_o.do</url-pattern>
+	</servlet-mapping>
+
+
+
+
+<!-- all -->
+   <servlet>
+      <servlet-name>all.login</servlet-name>
+      <servlet-class>com.fineapple.all.Login</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>all.login</servlet-name>
+      <url-pattern>/all/login.do</url-pattern>
+   </servlet-mapping>
+
+   <!-- 자개 -->
+   <servlet>
+      <servlet-name>all.FreeBoard.add</servlet-name>
+      <servlet-class>com.fineapple.all.freeboard.Add</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>all.FreeBoard.add</servlet-name>
+      <url-pattern>/all/freeboard/add.do</url-pattern>
+   </servlet-mapping>
+
+   <servlet>
+      <servlet-name>all.FreeBoard.addok</servlet-name>
+      <servlet-class>com.fineapple.all.freeboard.AddOk</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>all.FreeBoard.addok</servlet-name>
+      <url-pattern>/all/freeboard/addok.do</url-pattern>
+   </servlet-mapping>
+
+   <servlet>
+      <servlet-name>all.FreeBoard.download</servlet-name>
+      <servlet-class>com.fineapple.all.freeboard.Download</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>all.FreeBoard.download</servlet-name>
+      <url-pattern>/all/freeboard/download.do</url-pattern>
+   </servlet-mapping>
+
+   <servlet>
+      <servlet-name>all.FreeBoard.list</servlet-name>
+      <servlet-class>com.fineapple.all.freeboard.List</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>all.FreeBoard.list</servlet-name>
+      <url-pattern>/all/freeboard/list.do</url-pattern>
+   </servlet-mapping>
+
+   <servlet>
+      <servlet-name>all.FreeBoard.view</servlet-name>
+      <servlet-class>com.fineapple.all.freeboard.View</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>all.FreeBoard.view</servlet-name>
+      <url-pattern>/all/freeboard/view.do</url-pattern>
+   </servlet-mapping>
+
+   <servlet>
+      <servlet-name>all.FreeBoard.edit</servlet-name>
+      <servlet-class>com.fineapple.all.freeboard.Edit</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>all.FreeBoard.edit</servlet-name>
+      <url-pattern>/all/freeboard/edit.do</url-pattern>
+   </servlet-mapping>
+
+   <servlet>
+      <servlet-name>all.FreeBoard.editok</servlet-name>
+      <servlet-class>com.fineapple.all.freeboard.EditOk</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>all.FreeBoard.editok</servlet-name>
+      <url-pattern>/all/freeboard/editok.do</url-pattern>
+   </servlet-mapping>
+
+   <servlet>
+      <servlet-name>all.FreeBoard.delete</servlet-name>
+      <servlet-class>com.fineapple.all.freeboard.Delete</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>all.FreeBoard.delete</servlet-name>
+      <url-pattern>/all/freeboard/delete.do</url-pattern>
+   </servlet-mapping>
+
+   <!-- 설문조사 -->
+   <servlet>
+      <servlet-name>all.survey.add</servlet-name>
+      <servlet-class>com.fineapple.all.survey.Add</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>all.survey.add</servlet-name>
+      <url-pattern>/all/survey/add.do</url-pattern>
+   </servlet-mapping>
+
+   <servlet>
+      <servlet-name>all.survey.addok</servlet-name>
+      <servlet-class>com.fineapple.all.survey.AddOk</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>all.survey.addok</servlet-name>
+      <url-pattern>/all/survey/addok.do</url-pattern>
+   </servlet-mapping>
+   
+   <servlet>
+      <servlet-name>all.survey.list</servlet-name>
+      <servlet-class>com.fineapple.all.survey.List</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>all.survey.list</servlet-name>
+      <url-pattern>/all/survey/list.do</url-pattern>
+   </servlet-mapping>
+   
+   <servlet>
+      <servlet-name>all.survey.view</servlet-name>
+      <servlet-class>com.fineapple.all.survey.View</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>all.survey.view</servlet-name>
+      <url-pattern>/all/survey/view.do</url-pattern>
+   </servlet-mapping>
+   
+   <servlet>
+      <servlet-name>all.survey.answeraddok</servlet-name>
+      <servlet-class>com.fineapple.all.survey.AnswerAddOk</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>all.survey.answeraddok</servlet-name>
+      <url-pattern>/all/survey/answeraddok.do</url-pattern>
+   </servlet-mapping>
+   
+   <servlet>
+      <servlet-name>all.survey.result</servlet-name>
+      <servlet-class>com.fineapple.all.survey.Result</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>all.survey.result</servlet-name>
+      <url-pattern>/all/survey/result.do</url-pattern>
+   </servlet-mapping>
+
+   <!-- 주소록 -->
+   <servlet>
+      <servlet-name>all.contact.list</servlet-name>
+      <servlet-class>com.fineapple.all.contact.List</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>all.contact.list</servlet-name>
+      <url-pattern>/all/contact/list.do</url-pattern>
+   </servlet-mapping>
+
+
+
+	<!-- 김한주 : attendance -->
+	<servlet>	<!-- 메인페이지-->
+		<servlet-name>index</servlet-name>
+		<servlet-class>com.fineapple.Index</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>index</servlet-name>
+		<url-pattern>/index.do</url-pattern>
+	</servlet-mapping>	
+	
+	<servlet>	<!-- 근태업무 메인페이지-->
+		<servlet-name>attendance.task</servlet-name>
+		<servlet-class>com.fineapple.attendance.task.Task</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>attendance.task</servlet-name>
+		<url-pattern>/attendance/task.do</url-pattern>
+	</servlet-mapping>	
+
+	<servlet>	<!-- 근태업무 출근process-->
+		<servlet-name>attendance.taskComeOk</servlet-name>
+		<servlet-class>com.fineapple.attendance.task.TaskComeOk</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>attendance.taskComeOk</servlet-name>
+		<url-pattern>/attendance/taskComeOk.do</url-pattern>
+	</servlet-mapping>	
+
+	<servlet>	<!-- 근태업무 퇴근process-->
+		<servlet-name>attendance.taskLeaveOk</servlet-name>
+		<servlet-class>com.fineapple.attendance.task.TaskLeaveOk</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>attendance.taskLeaveOk</servlet-name>
+		<url-pattern>/attendance/taskLeaveOk.do</url-pattern>
+	</servlet-mapping>	
+
+	<servlet>	<!-- 근태업무 조회페이지-->
+		<servlet-name>attendance.taskList</servlet-name>
+		<servlet-class>com.fineapple.attendance.task.TaskList</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>attendance.taskList</servlet-name>
+		<url-pattern>/attendance/taskList.do</url-pattern>
+	</servlet-mapping>	
+
+	<servlet>	<!-- 근태업무 관리페이지-->
+		<servlet-name>attendance.taskManage</servlet-name>
+		<servlet-class>com.fineapple.attendance.task.TaskManage</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>attendance.taskManage</servlet-name>
+		<url-pattern>/attendance/taskManage.do</url-pattern>
+	</servlet-mapping>	
+
+	<servlet>	<!-- 통계 리스트 -->
+		<servlet-name>attendance.statisticsList</servlet-name>
+		<servlet-class>com.fineapple.attendance.statistics.StatisticsList</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>attendance.statisticsList</servlet-name>
+		<url-pattern>/attendance/statistics.do</url-pattern>
+	</servlet-mapping>		
+	
+	<servlet>	<!-- 자유게시판 리스트-->
+		<servlet-name>attendance.bbsList</servlet-name>
+		<servlet-class>com.fineapple.attendance.bbs.BbsList</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>attendance.bbsList</servlet-name>
+		<url-pattern>/attendance/bbs.do</url-pattern>
+	</servlet-mapping>		
+	
+	<servlet>	<!-- 자유게시판 글쓰기-->
+		<servlet-name>attendance.bbsAdd</servlet-name>
+		<servlet-class>com.fineapple.attendance.bbs.BbsAdd</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>attendance.bbsAdd</servlet-name>
+		<url-pattern>/attendance/bbsAdd.do</url-pattern>
+	</servlet-mapping>	
+	
+	<servlet>	<!-- 자유게시판 글쓰기 프로세스-->
+		<servlet-name>attendance.bbsAddOk</servlet-name>
+		<servlet-class>com.fineapple.attendance.bbs.BbsAddOk</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>attendance.bbsAddOk</servlet-name>
+		<url-pattern>/attendance/bbsAddOk.do</url-pattern>
+	</servlet-mapping>	
+
+
+
+
+
+	<!-- 전슬기 -->
+	<!-- 결재 자유 게시판 -->
+	<!-- 글쓰기 Add -->
+   	<servlet>
+      		<servlet-name>approval.Board.add</servlet-name>
+      		<servlet-class>com.fineapple.approval.board.Add</servlet-class>
+   	</servlet>
+   	<servlet-mapping>
+      		<servlet-name>approval.Board.add</servlet-name>
+      	<url-pattern>/approval/board/add.do</url-pattern>
+   	</servlet-mapping>
+   
+   <!-- 글쓰기 완료 AddOk -->
+   <servlet> 
+      <servlet-name>approval.Board.addok</servlet-name>
+      <servlet-class>com.fineapple.approval.board.AddOk</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>approval.Board.addok</servlet-name>
+      <url-pattern>/approval/board/addok.do</url-pattern>
+   </servlet-mapping>
+   
+   <!-- 게시판 내용 보기 View -->
+   <servlet> 
+      <servlet-name>approval.Board.view</servlet-name>
+      <servlet-class>com.fineapple.approval.board.View</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>approval.Board.view</servlet-name>
+      <url-pattern>/approval/board/view.do</url-pattern>
+   </servlet-mapping>
+
+   
+   <!-- 게시판 리스트 -->
+   <servlet> 
+      <servlet-name>approval.Board.list</servlet-name>
+      <servlet-class>com.fineapple.approval.board.List</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>approval.Board.list</servlet-name>
+      <url-pattern>/approval/board/list.do</url-pattern>
+   </servlet-mapping>
+   
+   <!-- 게시물 삭제하기 Del -->
+   <servlet> 
+      <servlet-name>approval.Board.del</servlet-name>
+      <servlet-class>com.fineapple.approval.board.Del</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>approval.Board.del</servlet-name>
+      <url-pattern>/approval/board/del.do</url-pattern>
+   </servlet-mapping>   
+ 
+    <!-- 게시물 삭제 완료 DelOk -->  
+   <servlet> 
+      <servlet-name>approval.Board.delok</servlet-name>
+      <servlet-class>com.fineapple.approval.board.DelOk</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>approval.Board.delok</servlet-name>
+      <url-pattern>/approval/board/delok.do</url-pattern>
+   </servlet-mapping>      
+   
+      <!-- 게시물 수정하기 Edit -->
+   <servlet> 
+      <servlet-name>approval.Board.edit</servlet-name>
+      <servlet-class>com.fineapple.approval.board.Edit</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>approval.Board.edit</servlet-name>
+      <url-pattern>/approval/board/edit.do</url-pattern>
+   </servlet-mapping>   
+ 
+    <!-- 게시물 수정 완료 EditOk -->  
+   <servlet> 
+      <servlet-name>approval.Board.editok</servlet-name>
+      <servlet-class>com.fineapple.approval.board.EditOk</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>approval.Board.editok</servlet-name>
+      <url-pattern>/approval/board/editok.do</url-pattern>
+   </servlet-mapping> 
+   
+   <!-- 기안서 작성 데이터 삽입 DraftAdd-->
+   <servlet>  
+      <servlet-name>approval.Draft.draftadd</servlet-name>
+      <servlet-class>com.fineapple.approval.draft.DraftAdd</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>approval.Draft.draftadd</servlet-name>
+      <url-pattern>/approval/draft/draftAdd.do</url-pattern>
+   </servlet-mapping>    
+   
+   <!-- 기안서 작성 데이터 삽입 완료 DraftAddOk-->
+   <servlet> 
+      <servlet-name>approval.Draft.draftaddok</servlet-name>
+      <servlet-class>com.fineapple.approval.draft.DraftAddOk</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>approval.Draft.draftaddok</servlet-name>
+      <url-pattern>/approval/draft/draftAddok.do</url-pattern>
+   </servlet-mapping>       
+   
+   <!-- 결재 년도별 카테고리 누적량 차트 -->
+   	<servlet>
+		<servlet-name>approval.chart.view</servlet-name>
+		<servlet-class>com.fineapple.approval.chart.View</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>approval.chart.view</servlet-name>
+		<url-pattern>/approval/chart/view.do</url-pattern>
+	</servlet-mapping>
+   
+   
+	<!-- 전슬기 끝 -->
+
+
+
+	<!-- ;%%%심재준마커. 쪽지 시작 -->
+	<servlet> <!-- inbox -->
+		<servlet-name>message.inbox</servlet-name>
+		<servlet-class>com.fineapple.message.Inbox</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>message.inbox</servlet-name>
+		<url-pattern>/message/inbox.do</url-pattern>
+	</servlet-mapping>
+	
+	<servlet> <!-- inboxsent -->
+		<servlet-name>message.inboxsent</servlet-name>
+		<servlet-class>com.fineapple.message.InboxSent</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>message.inboxsent</servlet-name>
+		<url-pattern>/message/inboxsent.do</url-pattern>
+	</servlet-mapping>
+	
+	<servlet> <!-- inboxsave -->
+		<servlet-name>message.inboxsave</servlet-name>
+		<servlet-class>com.fineapple.message.InboxSave</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>message.inboxsave</servlet-name>
+		<url-pattern>/message/inboxsave.do</url-pattern>
+	</servlet-mapping>
+
+	<servlet> <!-- add -->
+		<servlet-name>message.add</servlet-name>
+		<servlet-class>com.fineapple.message.Add</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>message.add</servlet-name>
+		<url-pattern>/message/add.do</url-pattern>
+	</servlet-mapping>
+	
+	<servlet> <!-- del -->
+		<servlet-name>message.del</servlet-name>
+		<servlet-class>com.fineapple.message.Del</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>message.del</servlet-name>
+		<url-pattern>/message/del.do</url-pattern>
+	</servlet-mapping>
+
+	<servlet> <!-- addok -->
+		<servlet-name>message.addok</servlet-name>
+		<servlet-class>com.fineapple.message.AddOk</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>message.addok</servlet-name>
+		<url-pattern>/message/addok.do</url-pattern>
+	</servlet-mapping>
+
+	<servlet> <!-- setting -->
+		<servlet-name>message.setting</servlet-name>
+		<servlet-class>com.fineapple.message.Setting</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>message.setting</servlet-name>
+		<url-pattern>/message/setting.do</url-pattern>
+	</servlet-mapping>
+	<servlet> <!-- settingok -->
+		<servlet-name>message.settingok</servlet-name>
+		<servlet-class>com.fineapple.message.SettingOk</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>message.settingok</servlet-name>
+		<url-pattern>/message/settingok.do</url-pattern>
+	</servlet-mapping>
+	<servlet> <!-- smsgdel -->
+		<servlet-name>message.smsgdel</servlet-name>
+		<servlet-class>com.fineapple.message.SmsgDel</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>message.smsgdel</servlet-name>
+		<url-pattern>/message/smsgdel.do</url-pattern>
+	</servlet-mapping>
+	<servlet> <!-- save -->
+		<servlet-name>message.save</servlet-name>
+		<servlet-class>com.fineapple.message.Save</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>message.save</servlet-name>
+		<url-pattern>/message/save.do</url-pattern>
+	</servlet-mapping>
+	<servlet> <!-- save -->
+		<servlet-name>message.view</servlet-name>
+		<servlet-class>com.fineapple.message.View</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>message.view</servlet-name>
+		<url-pattern>/message/view.do</url-pattern>
+	</servlet-mapping>
+	<servlet> <!-- save -->
+		<servlet-name>message.popupview</servlet-name>
+		<servlet-class>com.fineapple.message.PopupView</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>message.popupview</servlet-name>
+		<url-pattern>/message/popupview.do</url-pattern>
+	</servlet-mapping>
+
+
+
+
+
+   <!-- 김태현의 모임관리 서블릿 -->
+   <servlet> <!-- club.clublist -->
+      <servlet-name>club.clublist</servlet-name>
+      <servlet-class>com.fineapple.club.ClubList</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>club.clublist</servlet-name>
+      <url-pattern>/club/clublist.do</url-pattern>
+   </servlet-mapping>
+   
+   <servlet> <!-- club.templogin -->
+      <servlet-name>club.templogin</servlet-name>
+      <servlet-class>com.fineapple.club.TempLogin</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>club.templogin</servlet-name>
+      <url-pattern>/club/templogin.do</url-pattern>
+   </servlet-mapping>
+      
+   <servlet> <!-- club.myclubboard -->
+      <servlet-name>club.myclubboard</servlet-name>
+      <servlet-class>com.fineapple.club.MyClubBoard</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>club.myclubboard</servlet-name>
+      <url-pattern>/club/myclubboard.do</url-pattern>
+   </servlet-mapping>
+
+   <servlet> <!-- club.boardview -->
+      <servlet-name>club.boardview</servlet-name>
+      <servlet-class>com.fineapple.club.BoardView</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>club.boardview</servlet-name>
+      <url-pattern>/club/boardview.do</url-pattern>
+   </servlet-mapping>
+
+   <servlet> <!-- club.boardadd -->
+      <servlet-name>club.boardadd</servlet-name>
+      <servlet-class>com.fineapple.club.BoardAdd</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>club.boardadd</servlet-name>
+      <url-pattern>/club/boardadd.do</url-pattern>
+   </servlet-mapping>
+   
+
+   <servlet> <!-- club.boardadd -->
+      <servlet-name>club.boardaddok</servlet-name>
+      <servlet-class>com.fineapple.club.BoardAddOk</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>club.boardaddok</servlet-name>
+      <url-pattern>/club/boardaddok.do</url-pattern>
+   </servlet-mapping>
+
+   <servlet> <!-- club.votdlist -->
+      <servlet-name>club.myclubvote</servlet-name>
+      <servlet-class>com.fineapple.club.MyClubVote</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>club.myclubvote</servlet-name>
+      <url-pattern>/club/myclubvote.do</url-pattern>
+   </servlet-mapping>
+   
+   <servlet> <!-- club.voteview -->
+      <servlet-name>club.voteview</servlet-name>
+      <servlet-class>com.fineapple.club.VoteView</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>club.voteview</servlet-name>
+      <url-pattern>/club/voteview.do</url-pattern>
+   </servlet-mapping>
+   
+   
+   <servlet> <!-- club.voteok-->
+      <servlet-name>club.voteok</servlet-name>
+      <servlet-class>com.fineapple.club.VoteOk</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>club.voteok</servlet-name>
+      <url-pattern>/club/voteok.do</url-pattern>
+   </servlet-mapping>
+   
+   
+   <servlet> <!-- club.voteeditok-->
+      <servlet-name>club.voteeditok</servlet-name>
+      <servlet-class>com.fineapple.club.VoteEditOk</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>club.voteeditok</servlet-name>
+      <url-pattern>/club/voteeditok.do</url-pattern>
+   </servlet-mapping>
+   
+   
+   
+   <servlet> <!-- club.voteadd-->
+      <servlet-name>club.voteadd</servlet-name>
+      <servlet-class>com.fineapple.club.VoteAdd</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>club.voteadd</servlet-name>
+      <url-pattern>/club/voteadd.do</url-pattern>
+   </servlet-mapping>
+
+   
+   <servlet> <!-- club.voteaddok-->
+      <servlet-name>club.voteaddok</servlet-name>
+      <servlet-class>com.fineapple.club.VoteAddOk</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>club.voteaddok</servlet-name>
+      <url-pattern>/club/voteaddok.do</url-pattern>
+   </servlet-mapping>
+
+
+
+
+
+
+
+
+
+
+
+
+	<!-- 김현진꺼 -->
+	<servlet> <!-- position.list -->
+		<servlet-name>PBoardList</servlet-name>
+		<servlet-class>com.fineapple.position.List</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>PBoardList</servlet-name>
+		<url-pattern>/company/pages/position/board/list.do</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet> <!-- position.addok -->
+		<servlet-name>PBoardAdd</servlet-name>
+		<servlet-class>com.fineapple.position.Add</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>PBoardAdd</servlet-name>
+		<url-pattern>/company/pages/position/board/add.do</url-pattern>
+	</servlet-mapping>
+
+	<servlet> <!-- position.addok -->
+		<servlet-name>PBoardAddok</servlet-name>
+		<servlet-class>com.fineapple.position.AddOk</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>PBoardAddok</servlet-name>
+		<url-pattern>/company/pages/position/board/addok.do</url-pattern>
+	</servlet-mapping>
+
+	<servlet><!-- PBoardView -->
+		<servlet-name>PBboardview</servlet-name>
+		<servlet-class>com.fineapple.position.View</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>PBboardview</servlet-name>
+		<url-pattern>/company/pages/position/board/view.do</url-pattern>
+	</servlet-mapping>
+
+
+
+
+
+	<servlet><!-- ScheduleMain -->
+		<servlet-name>ScheduleMain</servlet-name>
+		<servlet-class>com.fineapple.position.ScheduleMain</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ScheduleMain</servlet-name>
+		<url-pattern>/company/pages/position/scheduleMain.do</url-pattern>
+	</servlet-mapping>
+
+
+
+
+	<servlet> <!-- Schedule.add -->
+		<servlet-name>ScheduleAdd</servlet-name>
+		<servlet-class>com.fineapple.position.Sadd</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ScheduleAdd</servlet-name>
+		<url-pattern>/company/pages/position/sadd.do</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet> <!-- Schedule.addok -->
+		<servlet-name>ScheduleAddok</servlet-name>
+		<servlet-class>com.fineapple.position.SaddOk</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ScheduleAddok</servlet-name>
+		<url-pattern>/company/pages/position/saddok.do</url-pattern>
+	</servlet-mapping>
+
+	<servlet> <!-- Schedule.View -->
+		<servlet-name>ScheduleView</servlet-name>
+		<servlet-class>com.fineapple.position.Sview</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ScheduleView</servlet-name>
+		<url-pattern>/company/pages/position/sview.do</url-pattern>
+	</servlet-mapping>
+
+	<servlet> <!-- Schedule.View2 -->
+		<servlet-name>ScheduleView2</servlet-name>
+		<servlet-class>com.fineapple.position.Sview2</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ScheduleView2</servlet-name>
+		<url-pattern>/company/pages/position/sview2.do</url-pattern>
+	</servlet-mapping>
+	
+	<servlet> <!-- Schedule.Del -->
+		<servlet-name>ScheduleDel</servlet-name>
+		<servlet-class>com.fineapple.position.Sdel</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ScheduleDel</servlet-name>
+		<url-pattern>/company/pages/position/sdel.do</url-pattern>
+	</servlet-mapping>
+
+	<servlet> <!-- Schedule.DelOk -->
+		<servlet-name>ScheduleDelOk</servlet-name>
+		<servlet-class>com.fineapple.position.SdelOk</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ScheduleDelOk</servlet-name>
+		<url-pattern>/company/pages/position/sdelok.do</url-pattern>
+	</servlet-mapping>
+	
+	<servlet> <!-- Schedule.Edit -->
+		<servlet-name>SEdit</servlet-name>
+		<servlet-class>com.fineapple.position.Sedit</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SEdit</servlet-name>
+		<url-pattern>/company/pages/position/sedit.do</url-pattern>
+	</servlet-mapping>
+
+	<servlet> <!-- Schedule.EditOk -->
+		<servlet-name>SEditOk</servlet-name>
+		<servlet-class>com.fineapple.position.SeditOk</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SEditOk</servlet-name>
+		<url-pattern>/company/pages/position/seditok.do</url-pattern>
+	</servlet-mapping>
+	
+	 <servlet><!-- Schedule.Chart -->
+    <servlet-name>SchartView</servlet-name>
+    <servlet-class>com.fineapple.position.chart.PscView</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SchartView</servlet-name>
+    <url-pattern>/company/pages/position/schedule/chart/pscview.do</url-pattern>
+  </servlet-mapping>
+
+</web-app>
+
+
