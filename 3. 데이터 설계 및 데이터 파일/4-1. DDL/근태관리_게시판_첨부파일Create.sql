@@ -1,0 +1,7 @@
+﻿CREATE TABLE atdbfile
+(
+	seq NUMBER PRIMARY KEY,
+	bseq NUMBER NOT NULL REFERENCES atdboard(seq),
+	orgfilename VARCHAR2(500) NOT NULL,
+	FILENAME VARCHAR2(500) NOT NULL
+);

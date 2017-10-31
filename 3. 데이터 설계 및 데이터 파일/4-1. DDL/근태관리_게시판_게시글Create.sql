@@ -1,0 +1,12 @@
+﻿create table atdBoard
+(
+	seq NUMBER PRIMARY KEY,
+	eseq NUMBER NOT NULL REFERENCES employee(seq),
+	cseq NUMBER NOT NULL REFERENCES atdbcategory(seq),
+	subject VARCHAR2(1000) NOT NULL,
+	regdate DATE DEFAULT sysdate,
+	CONTENT VARCHAR2(2000) NOT NULL,
+	readcount NUMBER DEFAULT 0 NOT NULL ,
+	THREAD NUMBER NOT NULL,
+	DEPTH NUMBER NOT NULL
+);

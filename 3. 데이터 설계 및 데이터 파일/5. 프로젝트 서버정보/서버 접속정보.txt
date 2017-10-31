@@ -1,0 +1,5 @@
+﻿Host(서버주소) 		: 119.197.206.57
+Port(포트번호) 		: 1521
+SID(시드) 		: orcl
+User(아이디) 		: SISTMVC
+Password(비밀번호) 	: java1234
